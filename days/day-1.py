@@ -1,4 +1,4 @@
-with open('day-1-input.txt') as file:
+with open('./inputs/day-1.txt') as file:
     numbers = [int(line.strip()) for line in file]
 
 target_sum = 2020
