@@ -18,6 +18,21 @@ def solve_day_two_part_one():
     
     print("result second day part one:", count)
         
+def solve_day_two_part_two():
+    count = 0
+    for line in lines:
+        policy, letter, password = line.split()
+
+        positionOne, positionTwo = policy.split('-')
+        
+        indexPositionOne = int(positionOne) - 1
+        indexPositionTwo = int(positionTwo) - 1
+
+        if (password[indexPositionOne] == letter[0]) ^ (password[indexPositionTwo] == letter[0]):
+            count = count + 1
+    
+    print("result second day part two:", count)
 
 
+solve_day_two_part_two()
 solve_day_two_part_one()
