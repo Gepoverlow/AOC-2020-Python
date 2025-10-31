@@ -23,4 +23,13 @@ def solve_day_seven_part_one():
     count = sum(1 for color in rules if has_shiny_gold(color))
     print("Part 1:", count - 1)
 
+def count_total_bags(bag_color):
+    return 1 + sum(int(num) * count_total_bags(inner_color)
+                   for num, inner_color in rules[bag_color])
+
+def solve_day_seven_part_two():
+    total = count_total_bags("shiny gold") - 1 
+    print("Part 2:", total)
+
 solve_day_seven_part_one()
+solve_day_seven_part_two()
